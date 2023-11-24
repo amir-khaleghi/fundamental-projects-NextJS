@@ -1,27 +1,108 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.bg-dot {
+  background: white;
+  background-image: radial-gradient(black 1px, transparent 0);
+  background-size: 40px 40px;
+  background-position: -19px -19px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Nav __________________________________________________ */
+.nav {
+  @apply flex items-center absolute w-full  px-10 gap-2 left-0  rounded-b-xl p-2  shadow-lg shadow-black/50  bg-white  transition duration-500;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Container ____________________________________________ */
+.container {
+  @apply flex p-4 m-4  flex-col items-center justify-center   border-slate-300 rounded-xl  shadow-lg shadow-black/50 border-t bg-white hover:scale-105 transition duration-500;
+}
+.back-shadow {
+  @apply rounded-xl  shadow-lg shadow-black/50 border-t bg-white;
+}
+
+.alert {
+  @apply flex flex-col items-center justify-center rounded-lg p-2 text-red-600 w-full font-semibold bg-red-200;
+}
+.sub-container {
+  @apply flex flex-col items-center justify-center rounded-lg p-2 gap-4;
+}
+
+.list {
+  @apply flex  justify-start border-b border-black/50 p-2  items-center gap-2;
+}
+
+.avatar {
+  @apply w-40 rounded-lg shadow-xl;
+}
+
+/* Buttons ______________________________________________ */
+.btn-primary {
+  @apply p-2 text-white rounded-lg bg-base-l-brown duration-300 transition hover:scale-105 font-semibold px-4;
+}
+.btn-secondary {
+  @apply p-2 text-black rounded-lg bg-base-l-brown duration-300 transition hover:scale-105;
+}
+
+/* Form _________________________________________________ */
+.form-row {
+  @apply flex flex-col border-b p-2 border-black w-full items-start;
+}
+
+/* Elements _____________________________________________ */
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl font-semibold;
+}
+
+h3 {
+  @apply text-2xl font-thin;
+}
+
+h4 {
+  @apply text-xl font-bold;
+}
+
+p {
+  @apply text-sm;
+}
+span {
+  @apply font-bold from-neutral-700;
+}
+
+td {
+  @apply p-2;
+}
+
+tr {
+  @apply border-b border-black/50;
+}
+
+th {
+  @apply p-2;
+}
+
+input {
+  @apply p-2 mt-2 border-slate-200 border rounded-lg bg-slate-50  shadow-inner;
+}
+label {
+  @apply font-semibold capitalize;
+}
+
+li {
+  @apply text-base-primary font-semibold;
+}
+
+.hover-105 {
+  @apply transition hover:scale-105 duration-500;
+}
+.hover-110 {
+  @apply transition hover:scale-110 duration-500;
+}
+.hover-shadow {
+  @apply transition hover:shadow-lg duration-500;
 }
