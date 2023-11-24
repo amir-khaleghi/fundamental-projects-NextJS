@@ -17,7 +17,7 @@ const List = ({ props }) => {
       <div className=" back-shadow w-full h-full ">
         {/* title */}
         <h3 className="bg-base-yellow  rounded-t-lg p-4 text-center">
-          <span>#0{props.length}</span> Friend's Birthday is Today (List)
+          <span>#0{props.length}</span> Friends Birthday is Today (List)
         </h3>
         {/* container */}
         <div className="flex gap-4 flex-col p-4 ">

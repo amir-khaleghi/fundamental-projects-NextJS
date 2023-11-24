@@ -16,7 +16,7 @@ const Card = ({ props }) => {
       <div className=" back-shadow w-full h-full ">
         {/* title */}
         <h3 className="bg-red-400 rounded-t-lg p-4 text-center">
-          <span>#0{props.length} </span> Friend's Birthday is Today (Card)
+          <span>#0{props.length} </span> Friends Birthday is Today (Card)
         </h3>
         {/* container */}
         <div className="grid md:grid-cols-2  lg:grid-cols-3 items-center justify-center gap-4 flex-wrap p-4 text-center bg-blue-50">
