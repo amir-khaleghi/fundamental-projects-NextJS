@@ -2,15 +2,13 @@
 import { birthdayBuddy } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
 import { TiArrowBack } from 'react-icons/ti';
 // ──────────────────────────────────────────────────── 🟩 ─
 import { fadeInImage } from '@/lib/variants';
 import { motion } from 'framer-motion';
 // ──────────────────────────────────────────────────── 🟩 ─
 
-const page = () => {
-  const params = useParams();
+const Page = ({ params }) => {
   const decodedName = decodeURIComponent(params.name);
 
   // console.log(decodedName);
@@ -54,4 +52,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
