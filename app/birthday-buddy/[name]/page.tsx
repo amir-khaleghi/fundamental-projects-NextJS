@@ -11,8 +11,6 @@ import { motion } from 'framer-motion';
 const Page = ({ params }) => {
   const decodedName = decodeURIComponent(params.name);
 
-  // console.log(decodedName);
-
   const selectedPerson = birthdayBuddy.filter((birth) => {
     return birth.name === decodedName;
   });
@@ -28,7 +26,7 @@ const Page = ({ params }) => {
       }}
     >
       <div
-        className="relative flex items-center gap-8 rounded-lg border-y  back-shadow hover-shadow"
+        className="relative w-fit flex items-center gap-8 rounded-lg border-y  back-shadow hover-shadow"
         key={name}
       >
         <Image
