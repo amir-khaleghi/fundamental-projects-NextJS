@@ -1,18 +1,17 @@
-import reducer from '@/context/reducer';
-import { memo, useReducer, useState } from 'react';
+import { useState } from 'react';
 import { ADD_NEW_FRIEND } from '@/context/actions';
+import { v4 as uuidv4 } from 'uuid';
 
 const Form = ({ dispatch }) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
-  const [selectedFile, setSelectedFile] = useState(null);
   const [img, setImg] = useState('');
-  // const [state, dispatch] = useReducer(reducer, props);
 
   const addNewFriend = (e) => {
     e.preventDefault();
-    const fakeId = Date.now();
-    const newFriend = { id: fakeId, name, age, img };
+    // const fakeId = Date.now();
+
+    const newFriend = { id: uuidv4(), name, age, img };
 
     dispatch({ type: ADD_NEW_FRIEND, payload: newFriend });
 
@@ -23,7 +22,6 @@ const Form = ({ dispatch }) => {
     // console.log(newUser);
     setName('');
     setAge('');
-    setSelectedFile(null);
     setImg('');
     e.currentTarget.reset();
   };
@@ -32,16 +30,16 @@ const Form = ({ dispatch }) => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    setSelectedFile(file);
 
     // Create a preview URL for the selected image
     const previewUrl = URL.createObjectURL(file);
     setImg(previewUrl);
   };
 
+  /* ■■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■■ */
   return (
     <form
-      className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 m-4 back-shadow"
+      className="grid grid-cols-1 rounded-lg  md:grid-cols-2 gap-2 p-4 m-4 back-shadow"
       onSubmit={addNewFriend}
     >
       <div className="form-input ">
@@ -51,6 +49,7 @@ const Form = ({ dispatch }) => {
           className=" w-full"
           type="text"
           id="name"
+          required
         />
       </div>
       <div className="form-input">
@@ -60,6 +59,7 @@ const Form = ({ dispatch }) => {
           className=" w-full"
           type="number"
           id="age"
+          required
         />
       </div>
       <div className="form-input">
@@ -71,10 +71,10 @@ const Form = ({ dispatch }) => {
           id="image"
         />
       </div>
-      <button className="btn-primary md:col-span-2 rounded-xl text-sm">
-        New Birthday Buddy
+      <button className="btn-primary md:col-span-2 rounded-xl text-xs md:text-sm">
+        New Buddy
       </button>
     </form>
   );
 };
-export default memo(Form);
+export default Form;

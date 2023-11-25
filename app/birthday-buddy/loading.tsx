@@ -14,6 +14,7 @@ export default function Loading() {
             className=" w-full"
             type="text"
             id="name"
+            required
           />
         </div>
         <div className="form-input">

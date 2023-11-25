@@ -13,6 +13,7 @@ const reducer = (state, action) => {
     case RESET_LIST:
       return { ...state, friends: birthdayBuddy };
     case ADD_NEW_FRIEND:
+      console.log(state.friends.age);
       return { ...state, friends: [...state.friends, action.payload] };
     default:
       return state;

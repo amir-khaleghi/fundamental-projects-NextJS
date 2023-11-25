@@ -9,10 +9,11 @@ import { motion } from 'framer-motion';
 // ──────────────────────────────────────────────────── 🟩 ─
 
 const Page = ({ params }) => {
-  const decodedName = decodeURIComponent(params.name);
+  // const decodedName = decodeURIComponent(params.name);
+  console.log(params);
 
   const selectedPerson = birthdayBuddy.filter((birth) => {
-    return birth.name === decodedName;
+    return birth.id === params.name;
   });
   const [{ img, name, age }] = selectedPerson;
   /* ■■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■■ */
@@ -40,9 +41,9 @@ const Page = ({ params }) => {
           </Link>
         </div>
         <div className="absolute text-white text-center  backdrop-blur-xl w-full bottom-10 md:bottom-20 left-0  ">
-          <h4 className="text-xl md:text-4xl ">{name}</h4>
+          <h4 className="text-xl md:text-4xl mb-4 ">{name}</h4>
           <h4>
-            <span>{age}</span> Years
+            <span className="text-black text-back-green">{age}</span> Years
           </h4>
         </div>
       </div>

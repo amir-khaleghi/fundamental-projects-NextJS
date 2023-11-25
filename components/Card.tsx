@@ -1,62 +1,64 @@
 'use client';
+// next
+// ──────────────────────────────────────────────────── 🟩 ─
 import Image from 'next/image';
 import Link from 'next/link';
+
+// icons
+// ──────────────────────────────────────────────────── 🟩 ─
 import { FaWindowClose } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
-import { motion } from 'framer-motion';
-import { fadeInImage } from '@/lib/variants';
-import { CLEAR_LIST, RESET_LIST, REMOVE_ITEM } from '@/context/actions';
 
+// comp
+// ──────────────────────────────────────────────────── 🟩 ─
 import Form from './Form';
-import reducer from '@/context/reducer';
+import TitleTag from './TitleTag';
+
+// hooks
+// ──────────────────────────────────────────────────── 🟩 ─
 import useCustomReducer from '@/context/useCustomReducer';
 import useHandlers from '@/context/useHandlers';
 
+/* ■■■■■■■■■■■■■■■■■■■■■■ Component ■■■■■■■■■■■■■■■■■■■■■ */
 const Card = () => {
-  /* Usereducer ___________________________________________ */
-
+  /* Hooks ______________________________________________ */
+  //useReducer
   const { state, dispatch } = useCustomReducer();
-  /* Handlers ___________________________________________ */
+  // handlers
   const { removeItem, resetList, clearList } = useHandlers({ dispatch });
 
+  /* ■■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■■ */
   return (
-    // <motion.div
-    //   className="rounded-xl"
-    //   variants={fadeInImage}
-    //   initial="initial"
-    //   whileInView="animate"
-    //   viewport={{
-    //     once: true,
-    //   }}
-    // >
-    <div className="bg-blue-50 back-shadow w-full h-full  rounded-2xl  relative  flex flex-col">
+    <div className="relative bg-blue-50 back-shadow w-full h-full rounded-2xl   rounded-tl-none    flex flex-col ">
       {/* title */}
-      <h3 className="bg-red-400 text-xl font-semibold rounded-t-lg p-4 text-center ">
-        <span>#0{state.friends.length} </span> Friends Birthday (Card)
-      </h3>
+      <TitleTag
+        state={state}
+        text={'Friends Birthday (Card)'}
+      />
       {/* form that use memo */}
       <Form dispatch={dispatch} />
       {/* container */}
       <div className=" grid md:grid-cols-2 rounded-b-xl  lg:grid-cols-3 items-center justify-center gap-4 flex-wrap p-4 text-center  ">
         {state.friends.map((birth) => {
           const { id, img, name, age } = birth;
+
           return (
             // rows
             <div
-              className="relative justify-between flex flex-col items-center gap-8 rounded-lg border-y cursor-pointer p-2   hover-shadow bg-white "
+              className="relative justify-between flex flex-col items-center gap-8 rounded-lg border-y hover:rotate-1 cursor-pointer border h-full pb-4 hover-shadow bg-white "
               key={id}
             >
               <Link
-                href={`birthday-buddy/${name}`}
+                href={`birthday-buddy/${id}`}
                 className="absolute inset-0 "
               />
               {img ? (
                 <Image
-                  className="md:w-40 w-full h-full rounded-full md:h-40 object-cover z-2"
+                  className="rounded-t-lg md:mt-2 md:w-40 w-full h-full md:rounded-full md:h-40 object-cover z-2"
                   src={img}
                   alt={name}
-                  width={400} // Adjust the width accordingly
-                  height={400} // Adjust the height accordingly
+                  width={400}
+                  height={400}
                 />
               ) : (
                 <div className=" ">
@@ -66,9 +68,11 @@ const Card = () => {
 
               <div>
                 <p className="text-lg font-semibold">{name}</p>
-                <p>
-                  <span>{age}</span> Years
-                </p>
+                {age && (
+                  <p>
+                    <span className="text-back-yellow">{age}</span> Years
+                  </p>
+                )}
               </div>
               <button className=" z-10 absolute right-0 -top-0.5">
                 <FaWindowClose
@@ -81,22 +85,21 @@ const Card = () => {
         })}
       </div>
 
-      <div className="w-full gap-4  flex ">
+      <div className="w-full gap-4 items-center justify-center mb-2 flex ">
         <button
           onClick={clearList}
-          className="btn-secondary rounded-tr-lg hover:bg-red-300 transition duration-200 w-full"
+          className="btn-danger"
         >
           Clear List
         </button>
         <button
           onClick={resetList}
-          className="btn-secondary  hover:bg-red-300 transition duration-200 w-full rounded-tl-lg"
+          className="btn-secondary "
         >
           Reset List
         </button>
       </div>
     </div>
-    // </motion.div>
   );
 };
 export default Card;

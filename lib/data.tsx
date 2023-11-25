@@ -87,31 +87,31 @@ import img5 from '@/assets/images/p5.jpg';
 
 export const birthdayBuddy = [
   {
-    id: 1,
+    id: '1b381-2c6e-4d09-ba',
     img: img1,
     name: 'Lola Gardner',
     age: '29',
   },
   {
-    id: 2,
+    id: '2b381-2c6e-4d09-ba',
     img: img2,
     name: 'Jack Little',
     age: '23',
   },
   {
-    id: 3,
+    id: '3b381-2c6e-4d09-ba',
     img: img3,
     name: 'Barbara Diangles',
     age: '24',
   },
   {
-    id: 4,
+    id: '4b381-2c6e-4d09-ba',
     img: img4,
     name: 'Hester Hogan',
     age: '21',
   },
   {
-    id: 5,
+    id: '5b381-2c6e-4d09-ba',
     img: img5,
     name: 'Bertie Yates',
     age: '34',
