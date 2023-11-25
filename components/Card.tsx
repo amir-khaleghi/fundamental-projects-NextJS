@@ -3,31 +3,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaWindowClose } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
-
 import { motion } from 'framer-motion';
 import { fadeInImage } from '@/lib/variants';
-import { useReducer, useState } from 'react';
 import { CLEAR_LIST, RESET_LIST, REMOVE_ITEM } from '@/context/actions';
-import { birthdayBuddy } from '@/lib/data';
 
 import Form from './Form';
 import reducer from '@/context/reducer';
+import useCustomReducer from '@/context/useCustomReducer';
+import useHandlers from '@/context/useHandlers';
 
 const Card = () => {
   /* Usereducer ___________________________________________ */
 
-  const [state, dispatch] = useReducer(reducer, { friends: birthdayBuddy });
-
+  const { state, dispatch } = useCustomReducer();
   /* Handlers ___________________________________________ */
-  const removeItem = (id) => {
-    dispatch({ type: REMOVE_ITEM, payload: { id } });
-  };
-  const resetList = () => {
-    dispatch({ type: RESET_LIST });
-  };
-  const clearList = () => {
-    dispatch({ type: CLEAR_LIST });
-  };
+  const { removeItem, resetList, clearList } = useHandlers({ dispatch });
 
   return (
     // <motion.div

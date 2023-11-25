@@ -1,41 +1,24 @@
 'use client';
-import { CLEAR_LIST, RESET_LIST, REMOVE_ITEM } from '@/context/actions';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { fadeInImage } from '@/lib/variants';
 import Form from './Form';
-import { useReducer } from 'react';
-import reducer from '@/context/reducer';
 import { birthdayBuddy } from '@/lib/data';
 import { CgProfile } from 'react-icons/cg';
 import { FaWindowClose } from 'react-icons/fa';
+import useCustomReducer from '@/context/useCustomReducer';
+import useHandlers from '@/context/useHandlers';
 
 const List = () => {
   /* Usereducer ___________________________________________ */
-  const [state, dispatch] = useReducer(reducer, { friends: birthdayBuddy });
+  const { state, dispatch } = useCustomReducer();
 
   /* Handlers ___________________________________________ */
-  const removeItem = (id) => {
-    dispatch({ type: REMOVE_ITEM, payload: { id } });
-  };
-  const resetList = () => {
-    dispatch({ type: RESET_LIST });
-  };
-  const clearList = () => {
-    dispatch({ type: CLEAR_LIST });
-  };
+  const { removeItem, resetList, clearList } = useHandlers({ dispatch });
 
   return (
-    // <motion.div
-    //   variants={fadeInImage}
-    //   initial="initial"
-    //   whileInView="animate"
-    //   viewport={{
-    //     once: true,
-    //   }}
-    // >
     <div className=" back-shadow rounded-xl w-full h-full ">
       {/* title */}
       <h3 className="bg-base-yellow  rounded-t-lg p-4 text-center">
@@ -62,8 +45,8 @@ const List = () => {
                   className="md:w-40 w-20 h-20 rounded-full md:h-40 object-cover z-2"
                   src={img}
                   alt={name}
-                  width={400} // Adjust the width accordingly
-                  height={400} // Adjust the height accordingly
+                  width={400}
+                  height={400}
                 />
               ) : (
                 <div className=" ">
@@ -102,7 +85,6 @@ const List = () => {
         </button>
       </div>
     </div>
-    // </motion.div>
   );
 };
 export default List;
