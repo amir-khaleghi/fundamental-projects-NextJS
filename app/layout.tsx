@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={
           (inter.className,
-          'bg-dot  m-10 grid grid-cols-6 gap-4 items-center justify-center text-4xl font-kalam overflow-x-hidden ')
+          'bg-dot  m-10 grid grid-cols-6 gap-4 items-center justify-center  font-opensans overflow-x-hidden ')
         }
       >
         <Sidebar />

@@ -38,10 +38,10 @@
 
 /* Buttons ______________________________________________ */
 .btn-primary {
-  @apply p-2 text-white rounded-lg bg-base-l-brown duration-300 transition hover:scale-105 font-semibold px-4;
+  @apply p-2 text-white  bg-blue-300 hover:bg-blue-500 duration-300 transition  font-semibold px-4;
 }
 .btn-secondary {
-  @apply p-2 text-black rounded-lg bg-base-l-brown duration-300 transition hover:scale-105;
+  @apply p-2 text-white bg-base-l-brown duration-300 transition;
 }
 
 /* Form _________________________________________________ */
@@ -49,27 +49,12 @@
   @apply flex flex-col border-b p-2 border-black w-full items-start;
 }
 
+.form-input {
+  @apply md:gap-4 justify-between w-full flex flex-col md:flex-row md:items-center;
+}
+
 /* Elements _____________________________________________ */
 
-h1 {
-  @apply text-4xl;
-}
-
-h2 {
-  @apply text-3xl font-semibold;
-}
-
-h3 {
-  @apply text-2xl font-thin;
-}
-
-h4 {
-  @apply text-xl font-bold;
-}
-
-p {
-  @apply text-sm;
-}
 span {
   @apply font-bold from-neutral-700;
 }
@@ -104,5 +89,5 @@ li {
   @apply transition hover:scale-110 duration-500;
 }
 .hover-shadow {
-  @apply transition hover:shadow-lg duration-500;
+  @apply transition hover:shadow-xl duration-500;
 }

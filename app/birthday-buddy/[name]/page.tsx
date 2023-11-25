@@ -24,7 +24,7 @@ const Page = ({ params }) => {
       initial="initial"
       whileInView="animate"
       viewport={{
-        once: false,
+        once: true,
       }}
     >
       <div
@@ -36,7 +36,7 @@ const Page = ({ params }) => {
           src={img}
           alt={name}
         />
-        <div className="absolute left-4 rounded-full hover:bg-base-yellow back-shadow top-4 cursor-pointer hover-105">
+        <div className="absolute text-4xl left-4 rounded-full hover:bg-base-yellow back-shadow top-4 cursor-pointer hover-105">
           <Link href="/birthday-buddy">
             <TiArrowBack />
           </Link>

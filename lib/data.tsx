@@ -87,26 +87,31 @@ import img5 from '@/assets/images/p5.jpg';
 
 export const birthdayBuddy = [
   {
+    id: 1,
     img: img1,
     name: 'Lola Gardner',
     age: '29',
   },
   {
+    id: 2,
     img: img2,
     name: 'Jack Little',
     age: '23',
   },
   {
+    id: 3,
     img: img3,
     name: 'Barbara Diangles',
     age: '24',
   },
   {
+    id: 4,
     img: img4,
     name: 'Hester Hogan',
     age: '21',
   },
   {
+    id: 5,
     img: img5,
     name: 'Bertie Yates',
     age: '34',

@@ -1,13 +1,13 @@
+'use client';
 import Card from '@/components/Card';
 import List from '@/components/List';
-import { birthdayBuddy } from '@/lib/data';
 
-const page = () => {
+const Page = () => {
   return (
-    <div className="flex flex-col gap-4">
-      <List props={birthdayBuddy} />
-      <Card props={birthdayBuddy} />
+    <div className="flex flex-col gap-4 ">
+      <List />
+      <Card />
     </div>
   );
 };
-export default page;
+export default Page;
