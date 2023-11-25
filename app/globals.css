@@ -56,7 +56,7 @@
 /* Elements _____________________________________________ */
 
 span {
-  @apply font-bold from-neutral-700;
+  @apply font-bold from-neutral-600;
 }
 
 td {
