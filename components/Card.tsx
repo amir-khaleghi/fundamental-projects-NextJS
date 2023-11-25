@@ -29,7 +29,7 @@ const Card = () => {
 
   /* ■■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■■ */
   return (
-    <div className="relative bg-blue-50 back-shadow w-full h-full rounded-2xl   rounded-tl-none    flex flex-col ">
+    <div className="relative  back-shadow w-full h-full rounded-2xl   rounded-tl-none    flex flex-col ">
       {/* title */}
       <TitleTag
         state={state}
@@ -38,31 +38,33 @@ const Card = () => {
       {/* form that use memo */}
       <Form dispatch={dispatch} />
       {/* container */}
-      <div className=" grid md:grid-cols-2 rounded-b-xl  lg:grid-cols-3 items-center justify-center gap-4 flex-wrap p-4 text-center  ">
+      <div className=" card">
         {state.friends.map((birth) => {
           const { id, img, name, age } = birth;
 
           return (
             // rows
             <div
-              className="relative justify-between flex flex-col items-center gap-8 rounded-lg border-y hover:rotate-1 cursor-pointer border h-full pb-4 hover-shadow bg-white "
+              className="card-row"
               key={id}
             >
-              <Link
-                href={`birthday-buddy/${id}`}
-                className="absolute inset-0 "
-              />
+              {img && (
+                <Link
+                  href={`birthday-buddy/${id}`}
+                  className="absolute inset-0"
+                />
+              )}
               {img ? (
                 <Image
-                  className="rounded-t-lg md:mt-2 md:w-40 w-full h-full md:rounded-full md:h-40 object-cover z-2"
+                  className="card-img"
                   src={img}
                   alt={name}
                   width={400}
                   height={400}
                 />
               ) : (
-                <div className=" ">
-                  <CgProfile className=" h-40  w-full md:h-40" />
+                <div>
+                  <CgProfile className=" card-thumbnail" />
                 </div>
               )}
 

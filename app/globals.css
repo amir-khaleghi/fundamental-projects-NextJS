@@ -128,3 +128,36 @@ li {
     opacity: 0.8;
   }
 }
+
+/* ■■■■■■■■■■■■■■■■■■■■■ Prop Style ■■■■■■■■■■■■■■■■■■■■■ */
+/* Card _________________________________________________ */
+.card {
+  @apply grid md:grid-cols-2 rounded-b-xl  lg:grid-cols-3 items-center justify-center gap-4 flex-wrap p-4 text-center;
+}
+
+.card-row {
+  @apply relative justify-between flex flex-col items-center gap-8 rounded-lg border-y hover:rotate-1 cursor-pointer border h-full pb-4 hover-shadow bg-white;
+}
+.card-img {
+  @apply rounded-t-lg md:mt-2 md:w-40 w-full h-full md:rounded-full md:h-40 object-cover;
+}
+.card-thumbnail {
+  @apply h-40  w-full md:h-40;
+}
+
+/* List _________________________________________________ */
+.list {
+  @apply flex gap-4 flex-col p-4;
+}
+
+.list-row {
+  @apply relative border justify-between flex items-center  rounded-lg border-y hover:rotate-1 cursor-pointer pr-2 w-full hover-shadow;
+}
+
+.list-img {
+  @apply md:w-40 h-20 w-20  md:h-40 object-cover;
+}
+
+.list-thumbnail {
+  @apply h-20  w-full md:h-40;
+}

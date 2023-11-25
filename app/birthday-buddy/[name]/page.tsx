@@ -10,7 +10,6 @@ import { motion } from 'framer-motion';
 
 const Page = ({ params }) => {
   // const decodedName = decodeURIComponent(params.name);
-  console.log(params);
 
   const selectedPerson = birthdayBuddy.filter((birth) => {
     return birth.id === params.name;

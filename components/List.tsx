@@ -17,7 +17,7 @@ const List = () => {
   const { removeItem, resetList, clearList } = useHandlers({ dispatch });
 
   return (
-    <div className="relative back-shadow rounded-xl w-full h-full ">
+    <div className="relative  back-shadow w-full h-full rounded-2xl   rounded-tl-none    flex flex-col ">
       {/* title */}
       <TitleTag
         state={state}
@@ -27,14 +27,14 @@ const List = () => {
       <Form dispatch={dispatch} />
 
       {/* container */}
-      <div className="flex gap-4 flex-col p-4 ">
+      <div className="list ">
         {state.friends.map((birth) => {
           const { id, img, name, age } = birth;
 
           return (
             // rows
             <div
-              className="relative border justify-between flex items-center  rounded-lg border-y hover:rotate-1 cursor-pointer pr-2  hover-shadow"
+              className="list-row"
               key={name}
             >
               {img && (
@@ -45,15 +45,15 @@ const List = () => {
               )}
               {img ? (
                 <Image
-                  className="md:w-40 h-20 w-20  md:h-40 object-cover "
+                  className="list-img"
                   src={img}
                   alt={name}
                   width={400}
                   height={400}
                 />
               ) : (
-                <div className=" ">
-                  <CgProfile className=" h-20  w-full md:h-40" />
+                <div>
+                  <CgProfile className=" list-thumbnail" />
                 </div>
               )}
               <div className="mt-4  text-center text-xs ">
