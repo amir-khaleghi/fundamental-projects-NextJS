@@ -13,7 +13,6 @@ const Form = ({ dispatch }) => {
     e.preventDefault();
     const fakeId = Date.now();
     const newFriend = { id: fakeId, name, age, img };
-    console.log(newFriend);
 
     dispatch({ type: ADD_NEW_FRIEND, payload: newFriend });
 
@@ -45,7 +44,7 @@ const Form = ({ dispatch }) => {
       className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 m-4 back-shadow"
       onSubmit={addNewFriend}
     >
-      <div className="form-input">
+      <div className="form-input ">
         <label htmlFor="name">Name:</label>
         <input
           onChange={(e) => setName(e.target.value)}

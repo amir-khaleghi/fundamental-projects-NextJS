@@ -91,3 +91,34 @@ li {
 .hover-shadow {
   @apply transition hover:shadow-xl duration-500;
 }
+
+/* Template _____________________________________________ */
+/* LoadingTemplate.module.css */
+.loadingContainer {
+  @apply w-full h-full  flex items-center justify-center;
+}
+
+.shadowAnimation {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  opacity: 0.5;
+  animation: shadowPulse 1.5s infinite alternate;
+}
+
+.loadingText {
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+}
+
+@keyframes shadowPulse {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
