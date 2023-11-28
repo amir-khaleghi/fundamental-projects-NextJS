@@ -20,7 +20,10 @@ import { clearList, deletePerson, resetList } from '@/utils/actions';
 
 /* ■■■■■■■■■■■■■■■■■■■■■■ Component ■■■■■■■■■■■■■■■■■■■■■ */
 const Card = ({ persons }) => {
+  // const [updateTrigger, setState] = useState({ persons });
   const [isLoading, setIsLoading] = useState(false);
+  //for reset btn at first run
+  const [isButtonActive, setButtonActive] = useState(false);
   useEffect(() => {
     setIsLoading(false);
   }, [persons]);
@@ -29,10 +32,10 @@ const Card = ({ persons }) => {
   return (
     <div className="relative back-shadow w-full h-full rounded-2xl   rounded-tl-none flex flex-col">
       {/* title */}
-      {/* <TitleTag
-        state={state}
+      <TitleTag
+        persons={persons}
         text={'Friends Birthday (Card)'}
-      /> */}
+      />
       {/* form that use memo */}
       <Form />
       {/* container */}
@@ -83,6 +86,8 @@ const Card = ({ persons }) => {
                 <button className=" z-10 absolute right-0 -top-0.5">
                   <FaWindowClose
                     onClick={() => {
+                      setIsLoading(true);
+                      setButtonActive(false);
                       deletePerson(id);
                     }}
                     className="text-3xl hover:text-red-500  "
@@ -96,19 +101,23 @@ const Card = ({ persons }) => {
       <div className="w-full gap-4 items-center justify-center mb-2 flex ">
         <button
           onClick={() => {
+            setIsLoading(true);
+            setButtonActive(false);
             clearList();
-            setIsLoading(false);
           }}
           className="btn-danger"
         >
           Clear List
         </button>
+
         <button
+          disabled={isButtonActive}
           onClick={() => {
-            resetList();
             setIsLoading(true);
+            setButtonActive(true);
+            resetList();
           }}
-          className="btn-secondary "
+          className={isButtonActive ? 'btn-disabled' : 'btn-secondary'}
         >
           Reset List
         </button>
