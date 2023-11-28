@@ -46,6 +46,9 @@
 .btn-danger {
   @apply p-2 hover:text-white shadow-lg shadow-black/20 border-t duration-300 transition rounded-lg px-4  hover:bg-red-400  w-full m-3;
 }
+.btn-disabled {
+  @apply p-2   border duration-300 rounded-lg px-4   w-full m-3;
+}
 
 /* Form _________________________________________________ */
 .form-row {

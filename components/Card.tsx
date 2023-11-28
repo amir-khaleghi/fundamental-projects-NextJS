@@ -21,9 +21,11 @@ import { clearList, deletePerson, resetList } from '@/utils/actions';
 /* ■■■■■■■■■■■■■■■■■■■■■■ Component ■■■■■■■■■■■■■■■■■■■■■ */
 const Card = ({ persons }) => {
   const [isLoading, setIsLoading] = useState(false);
+  //for reset btn at first run
+  const [isButtonActive, setButtonActive] = useState(true);
   useEffect(() => {
     setIsLoading(false);
-  }, [persons]);
+  }, [persons.length]);
   // handlers
   /* ■■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■■ */
   return (
@@ -83,8 +85,9 @@ const Card = ({ persons }) => {
                 <button className=" z-10 absolute right-0 -top-0.5">
                   <FaWindowClose
                     onClick={() => {
-                      deletePerson(id);
                       setIsLoading(true);
+                      setButtonActive(false);
+                      deletePerson(id);
                     }}
                     className="text-3xl hover:text-red-500  "
                   />
@@ -97,19 +100,23 @@ const Card = ({ persons }) => {
       <div className="w-full gap-4 items-center justify-center mb-2 flex ">
         <button
           onClick={() => {
+            setIsLoading(true);
+            setButtonActive(false);
             clearList();
-            setIsLoading(false);
           }}
           className="btn-danger"
         >
           Clear List
         </button>
+
         <button
+          disabled={isButtonActive}
           onClick={() => {
             setIsLoading(true);
+            setButtonActive(true);
             resetList();
           }}
-          className="btn-secondary "
+          className={isButtonActive ? 'btn-disabled' : 'btn-secondary'}
         >
           Reset List
         </button>
