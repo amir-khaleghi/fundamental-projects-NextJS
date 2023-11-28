@@ -20,10 +20,9 @@ import { clearList, deletePerson, resetList } from '@/utils/actions';
 
 /* ■■■■■■■■■■■■■■■■■■■■■■ Component ■■■■■■■■■■■■■■■■■■■■■ */
 const Card = ({ persons }) => {
-  // const [updateTrigger, setState] = useState({ persons });
   const [isLoading, setIsLoading] = useState(false);
   //for reset btn at first run
-  const [isButtonActive, setButtonActive] = useState(false);
+  const [isButtonActive, setButtonActive] = useState(true);
   useEffect(() => {
     setIsLoading(false);
   }, [persons]);

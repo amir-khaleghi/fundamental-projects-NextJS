@@ -3,9 +3,7 @@ import { revalidatePath } from 'next/cache';
 import db from './db';
 import { exec, execSync } from 'child_process';
 
-// import convert from '@/utils/convertFileToDataUrl';
-
-// ─── New Person ────────────────────────────────────── 🟩 ─
+// ─── New To Do ────────────────────────────────────── 🟩 ─
 
 export const newPerson = async (formData) => {
   const name = formData.get('name');
@@ -19,7 +17,6 @@ export const newPerson = async (formData) => {
 
   // const imageUrl = URL.createObjectURL(imageBlob);
 
-  console.log(`this is imageUrl : ${imageBlob}`);
   const person = await db.person.create({
     data: {
       // img: imageBlob,
@@ -34,7 +31,7 @@ export const newPerson = async (formData) => {
 // ─── Delete person ──────────────────────────────────── 🟩 ─
 
 export const deletePerson = async (id) => {
-  // console.log(`delete id : ${id}`);
+  console.log(`delete id : ${id}`);
   await db.person.delete({
     where: { id },
   });
@@ -45,7 +42,7 @@ export const deletePerson = async (id) => {
 // ─── Clear List ──────────────────────────────────── 🟩 ─
 
 export const clearList = async () => {
-  // console.log('clearing list ...');
+  console.log('clearing list ...');
   await db.person.deleteMany({});
 
   revalidatePath('/birthday-buddy');
@@ -53,8 +50,8 @@ export const clearList = async () => {
 // ──────────────────────────────────────────────────── 🟩 ─
 // ─── Reset List ──────────────────────────────────── 🟩 ─
 
-export const resetList = async () => {
-  // console.log('reset list');
+export const resetList = () => {
+  console.log('reset list');
   try {
     execSync('npx prisma migrate reset --force ');
     // console.log('done');

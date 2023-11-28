@@ -16,7 +16,7 @@ const Page = () => {
   }, []);
   return (
     <div className="container w-fit  h-full gap-4  grid grid-cols-3">
-      {tours.map((tour) => {
+      {/* {tours.map((tour) => {
         return (
           <div
             className="back-shadow rounded-lg p-2 hover-105 "
@@ -27,7 +27,7 @@ const Page = () => {
             <p>{tour.name}</p>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 };
