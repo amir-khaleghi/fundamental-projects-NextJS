@@ -22,6 +22,7 @@ import { clearList, deletePerson, resetList } from '@/utils/actions';
 const Card = ({ persons }) => {
   const [isLoading, setIsLoading] = useState(false);
   //for reset btn at first run
+
   const [isButtonActive, setButtonActive] = useState(true);
   useEffect(() => {
     setIsLoading(false);
@@ -109,7 +110,7 @@ const Card = ({ persons }) => {
           Clear List
         </button>
 
-        <button
+        {/* <button
           disabled={isButtonActive}
           onClick={() => {
             setIsLoading(true);
@@ -119,7 +120,7 @@ const Card = ({ persons }) => {
           className={isButtonActive ? 'btn-disabled' : 'btn-secondary'}
         >
           Reset List
-        </button>
+        </button> */}
       </div>
     </div>
   );

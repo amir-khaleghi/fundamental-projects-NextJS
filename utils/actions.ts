@@ -1,10 +1,8 @@
 'use server';
 import { revalidatePath } from 'next/cache';
 import db from './db';
-// import { exec } from 'child_process';
-import util from 'util';
+import { exec, execSync } from 'child_process';
 
-const exec = util.promisify(require('child_process').exec);
 // ─── New To Do ────────────────────────────────────── 🟩 ─
 
 export const newPerson = async (formData) => {
@@ -51,15 +49,15 @@ export const clearList = async () => {
 };
 // ──────────────────────────────────────────────────── 🟩 ─
 // ─── Reset List ──────────────────────────────────── 🟩 ─
-export const resetList = async () => {
-  console.log('reset list');
-  try {
-    const { stdout, stderr } = await exec('npx prisma migrate reset --force');
-    console.log('stdout:', stdout);
-    console.error('stderr:', stderr);
-  } catch (error) {
-    console.error('Error:', error);
-  } finally {
-    revalidatePath('/birthday-buddy');
-  }
-};
+
+// export const resetList = async () => {
+//   console.log('reset list');
+//   try {
+//     await exec('npx prisma migrate reset --force ');
+//     // console.log('done');
+//   } catch (error) {
+//     console.error('Error:', error);
+//   } finally {
+//     revalidatePath('/birthday-buddy');
+//   }
+// };
