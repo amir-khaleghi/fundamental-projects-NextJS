@@ -79,11 +79,11 @@ export const Links = [
 ];
 
 /* ■■■■■■■■■■■■■■■■■■■ Birthday Buddy ■■■■■■■■■■■■■■■■■■■ */
-import img1 from '@/assets/images/p1.jpg';
-import img2 from '@/assets/images/p2.jpg';
-import img3 from '@/assets/images/p3.jpg';
-import img4 from '@/assets/images/p4.jpg';
-import img5 from '@/assets/images/p5.jpg';
+import img1 from '@/assets/birthImg/p1.jpg';
+import img2 from '@/assets/birthImg/p2.jpg';
+import img3 from '@/assets/birthImg/p3.jpg';
+import img4 from '@/assets/birthImg/p4.jpg';
+import img5 from '@/assets/birthImg/p5.jpg';
 
 export const birthdayBuddy = [
   {

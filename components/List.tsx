@@ -6,8 +6,8 @@ import Link from 'next/link';
 import Form from './Form';
 import { CgProfile } from 'react-icons/cg';
 import { FaWindowClose } from 'react-icons/fa';
-import useCustomReducer from '@/context/useCustomReducer';
-import useHandlers from '@/context/useHandlers';
+import useCustomReducer from '@/hooks/useCustomReducer';
+import useHandlers from '@/hooks/useHandlers';
 import TitleTag from './TitleTag';
 const List = () => {
   /* Usereducer ___________________________________________ */

@@ -1,6 +1,6 @@
 const layout = ({ children }) => {
   return (
-    <div>
+    <div className="font-roboto">
       <div>{children}</div>
     </div>
   );
