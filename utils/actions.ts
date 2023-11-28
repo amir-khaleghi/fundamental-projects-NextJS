@@ -53,7 +53,7 @@ export const clearList = async () => {
 export const resetList = () => {
   console.log('reset list');
   try {
-    exec('npx prisma migrate reset --force ');
+    execSync('npx prisma migrate reset --force ');
     // console.log('done');
   } catch (error) {
     console.error('Error:', error);
