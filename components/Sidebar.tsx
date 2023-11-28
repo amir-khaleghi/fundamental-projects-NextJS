@@ -1,4 +1,4 @@
-import { Links } from '@/lib/data';
+import { Links } from '@/context/data';
 import Link from 'next/link';
 
 const Sidebar = () => {

@@ -1,10 +1,10 @@
 'use client';
-import { birthdayBuddy } from '@/lib/data';
+import { birthdayBuddy } from '@/context/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TiArrowBack } from 'react-icons/ti';
 // ──────────────────────────────────────────────────── 🟩 ─
-import { fadeInImage } from '@/lib/variants';
+import { fadeInImage } from '@/utils/variants';
 import { motion } from 'framer-motion';
 // ──────────────────────────────────────────────────── 🟩 ─
 

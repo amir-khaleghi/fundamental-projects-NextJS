@@ -3,7 +3,7 @@ import { TiArrowBack } from 'react-icons/ti';
 export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.
   return (
-    <div className="shadowAnimation relative w-fit h-fit md:w-[800px] md:h-[800px] flex items-center gap-8 rounded-lg border-y  back-shadow">
+    <div className="shadowAnimation relative w-fit h-fit w-[300px] md:w-[800px] md:h-[800px] flex items-center gap-8 rounded-lg border-y  back-shadow">
       <div className=" shadowAnimation absolute text-4xl left-4 rounded-full  back-shadow top-4 cursor-pointer hover-105">
         <div className="w-8 h-8 shadowAnimation"></div>
       </div>
