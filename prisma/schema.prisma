@@ -22,3 +22,5 @@ model Person {
   img   String?
   age     Int
 }
+
+model Tours
