@@ -29,10 +29,10 @@ const Card = ({ persons }) => {
   return (
     <div className="relative back-shadow w-full h-full rounded-2xl   rounded-tl-none flex flex-col">
       {/* title */}
-      {/* <TitleTag
-        state={state}
+      <TitleTag
+        persons={persons}
         text={'Friends Birthday (Card)'}
-      /> */}
+      />
       {/* form that use memo */}
       <Form />
       {/* container */}
