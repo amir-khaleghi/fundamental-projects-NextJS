@@ -84,6 +84,7 @@ const Card = ({ persons }) => {
                   <FaWindowClose
                     onClick={() => {
                       deletePerson(id);
+                      setIsLoading(true);
                     }}
                     className="text-3xl hover:text-red-500  "
                   />
@@ -105,8 +106,8 @@ const Card = ({ persons }) => {
         </button>
         <button
           onClick={() => {
-            resetList();
             setIsLoading(true);
+            resetList();
           }}
           className="btn-secondary "
         >
