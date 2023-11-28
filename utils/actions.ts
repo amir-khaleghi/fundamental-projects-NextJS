@@ -31,7 +31,6 @@ export const newPerson = async (formData) => {
 // ─── Delete person ──────────────────────────────────── 🟩 ─
 
 export const deletePerson = async (id) => {
-  console.log(`delete id : ${id}`);
   await db.person.delete({
     where: { id },
   });

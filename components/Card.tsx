@@ -25,7 +25,7 @@ const Card = ({ persons }) => {
   const [isButtonActive, setButtonActive] = useState(true);
   useEffect(() => {
     setIsLoading(false);
-  }, [persons.length]);
+  }, [persons]);
   // handlers
   /* ■■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■■ */
   return (
