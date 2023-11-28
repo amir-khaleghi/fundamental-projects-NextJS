@@ -111,11 +111,10 @@ const Card = ({ persons }) => {
 
         <button
           disabled={isButtonActive}
-          onClick={async () => {
+          onClick={() => {
             setIsLoading(true);
             setButtonActive(true);
-            await resetList();
-            setIsLoading(false);
+            resetList();
           }}
           className={isButtonActive ? 'btn-disabled' : 'btn-secondary'}
         >
