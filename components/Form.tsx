@@ -1,12 +1,23 @@
 import { useState } from 'react';
 import { newPerson } from '@/utils/actions';
 const Form = () => {
+  /* Handler ______________________________________________ */
+  const handleForm = (e) => {
+    // Create a new FormData object from the form
+    const formData = new FormData(e.target);
+    setTimeout(() => {
+      e.target.reset();
+    }, 100);
+    // Reset the form after preventing default behavior
+  };
+
   /* ■■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■■ */
   return (
     <form
       action={newPerson}
       // encType="multipart/form-data"
       className="grid grid-cols-1 rounded-lg  md:grid-cols-2 gap-2 p-4 m-4 back-shadow"
+      onSubmit={handleForm}
     >
       <div className="form-input ">
         <label htmlFor="name">Name:</label>

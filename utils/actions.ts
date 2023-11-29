@@ -31,7 +31,7 @@ export const newPerson = async (formData) => {
 // ─── Delete person ──────────────────────────────────── 🟩 ─
 
 export const deletePerson = async (id) => {
-  console.log(`delete id : ${id}`);
+  // console.log(`delete id : ${id}`);
   await db.person.delete({
     where: { id },
   });
@@ -42,7 +42,7 @@ export const deletePerson = async (id) => {
 // ─── Clear List ──────────────────────────────────── 🟩 ─
 
 export const clearList = async () => {
-  console.log('clearing list ...');
+  // console.log('clearing list ...');
   await db.person.deleteMany({});
 
   revalidatePath('/birthday-buddy');
