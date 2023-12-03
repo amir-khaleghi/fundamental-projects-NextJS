@@ -10,7 +10,10 @@
 
 /* Title ________________________________________________ */
 .title {
-  @apply text-3xl underline-offset-8 md:text-5xl decoration-4 underline decoration-green-400 font-bold;
+  @apply md:text-2xl underline-offset-8 text-lg decoration-4 underline decoration-green-400 font-bold pt-4 capitalize;
+}
+.sub-title {
+  @apply text-sm pt-2  md:text-lg  font-semibold capitalize;
 }
 /* Nav __________________________________________________ */
 .nav {
@@ -19,7 +22,7 @@
 
 /* Container ____________________________________________ */
 .container {
-  @apply p-8 m-4   border-slate-300 rounded-xl  shadow-lg shadow-black/50 border-t bg-white  transition duration-500;
+  @apply p-8   border-slate-300 rounded-xl  shadow-lg shadow-black/50 border-t bg-white  transition duration-500;
 }
 .back-shadow {
   @apply shadow-lg shadow-black/50 border-t bg-white;
@@ -42,7 +45,7 @@
 
 /* Buttons ______________________________________________ */
 .btn-primary {
-  @apply p-2 text-black  hover:text-white hover:bg-blue-500 duration-300 transition  font-semibold px-4  shadow-lg shadow-black/20 border-t bg-white;
+  @apply p-2 text-black  hover:text-white hover:bg-green-500 duration-300 transition bg-green-100 font-semibold px-4  shadow-lg shadow-black/20 border-t;
 }
 .btn-secondary {
   @apply p-2 hover:text-white shadow-lg shadow-black/20 border-t duration-300 transition rounded-lg   hover:bg-green-400  w-fit m-3;

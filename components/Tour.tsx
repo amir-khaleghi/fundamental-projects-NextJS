@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const Tour = ({ id, image, info, name, price, removeTour }) => {
   const [readMore, setReadMore] = useState(false);
-  console.log(info.substring(0, 20));
+  // console.log(info.substring(0, 20));
 
   return (
     <div

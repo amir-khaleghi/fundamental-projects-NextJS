@@ -51,7 +51,7 @@ const Tours = () => {
   }
 
   return (
-    <div className="gird md:grid-cols-2 w-fit  h-full gap-8  grid lg:grid-cols-3">
+    <div className="gird  w-fit  h-full gap-8  grid lg:grid-cols-3 md:grid-cols-2">
       {tours.map((tour) => {
         return (
           <Tour

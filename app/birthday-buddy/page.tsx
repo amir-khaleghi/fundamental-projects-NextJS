@@ -14,7 +14,7 @@ const Page = async () => {
   const persons = await getData();
 
   return (
-    <div className="flex flex-col gap-20 md:ml-12 lg:ml-28">
+    <div className="flex flex-col md:ml-[80px] gap-20  ">
       {/* <List /> */}
       <Card persons={persons} />
     </div>
