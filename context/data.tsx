@@ -24,7 +24,7 @@ export const Links = [
     icon: <LiaBirthdayCakeSolid />,
   },
   { active: true, href: '/tours', label: 'Tours', icon: <MdTour /> },
-  { active: false, href: '/reviews', label: 'reviews', icon: <MdRateReview /> },
+  { active: true, href: '/reviews', label: 'reviews', icon: <MdRateReview /> },
   {
     active: false,
     href: '/accordion',

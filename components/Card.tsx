@@ -33,7 +33,7 @@ const Card = ({ persons }) => {
     <div className="relative back-shadow w-full h-full rounded-2xl   rounded-tl-none flex flex-col">
       {/* title */}
       <TitleTag
-        persons={persons}
+        state={persons}
         text={'Friends Birthday (Card)'}
       />
       {/* form that use memo */}
