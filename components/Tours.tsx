@@ -10,7 +10,7 @@ const Tours = () => {
     try {
       const response = await fetch(url);
       const tours = await response.json();
-      console.log(tours);
+      // console.log(tours);
       setTour(tours);
       setIsLoading(false);
     } catch (error) {
@@ -22,9 +22,7 @@ const Tours = () => {
   }, []);
   /* Handler ____________________________________________ */
   const removeTour = (id) => {
-    console.log(id);
     const newTour = tours.filter((tour) => tour.id !== id);
-    console.log(newTour);
     setTour(newTour);
   };
 

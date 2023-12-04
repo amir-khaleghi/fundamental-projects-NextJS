@@ -21,8 +21,8 @@ const Tour = ({ id, image, info, name, price, removeTour }) => {
       <h3 className="p-2 flex items-center justify-center text-center font-bold  w-full h-20 backdrop-blur-xl bg-green-50">
         {name}
       </h3>
-      <p className="p-4 text-center">
-        {readMore ? info : `${info.substring(0, 100)}`}
+      <p className="p-4 text-center text-sm md:text-lg">
+        {readMore ? info : `${info.substring(0, 60)}`}
         <button
           onClick={() => {
             setReadMore(!readMore);

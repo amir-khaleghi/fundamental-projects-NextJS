@@ -38,23 +38,22 @@ const Slider = ({ reviews }) => {
   //   });
   // };
   // ──────────────────────────────────────────────────── 🟩 ─
-  //  ||
-  //  ||
-  //  ||
-  //  ||
-  //  \/
 
   const nextPerson = () => {
     setIndex((currentIndex) => {
       const newIndex = (currentIndex + 1) % reviews.length;
       return newIndex;
     });
+    // indexes    0  1  2  3   0  1  2  3 
+    // newIndex   1  2  3  0   1  2  3  0
   };
   const prevPerson = () => {
     setIndex((currentIndex) => {
       const newIndex = (currentIndex - 1 + reviews.length) % reviews.length;
       return newIndex;
     });
+    // indexes    0  1  2  3   0  1  2  3
+    // newIndex   3  0  1  2   3  0  1  2 
   };
 
   //randomReview
