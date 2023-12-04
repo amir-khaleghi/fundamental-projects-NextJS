@@ -25,7 +25,7 @@
   @apply p-8   border-slate-300 rounded-xl  shadow-lg shadow-black/50 border-t bg-white  transition duration-500;
 }
 .back-shadow {
-  @apply shadow-lg shadow-black/50 border-t;
+  @apply shadow-lg shadow-black/50 border-t bg-white;
 }
 
 .alert {
