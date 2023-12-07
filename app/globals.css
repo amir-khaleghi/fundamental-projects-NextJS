@@ -8,6 +8,36 @@
   background-position: -19px -19px;
 }
 
+/* Bg-color _____________________________________________ */
+
+.rainbow-mesh {
+  background-color: white;
+  background-image: radial-gradient(
+      at 40% 20%,
+      hsla(28, 100%, 74%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%);
+  /* radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(343, 100%, 76%, 1) 0px, transparent 50%); */
+}
+
+.candy-mesh {
+  background-color: #ff99ee;
+  background-image: radial-gradient(
+      at 99% 6%,
+      hsla(195, 69%, 67%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 55% 88%, hsla(189, 74%, 69%, 1) 0px, transparent 50%),
+    radial-gradient(at 53% 27%, hsla(271, 78%, 63%, 1) 0px, transparent 50%),
+    radial-gradient(at 89% 89%, hsla(317, 89%, 70%, 1) 0px, transparent 50%),
+    radial-gradient(at 35% 44%, hsla(337, 92%, 61%, 1) 0px, transparent 50%);
+}
+
 /* Title ________________________________________________ */
 .title {
   @apply md:text-2xl underline-offset-8 text-lg decoration-4 underline decoration-green-400 font-bold pt-4 capitalize;
@@ -28,6 +58,16 @@
   @apply shadow-lg shadow-black/50 border-t bg-white;
 }
 
+.inside-shadow {
+  background: #f9f9f9;
+  box-shadow: 30px 30px 75px 0px rgba(194, 194, 194, 0.9) inset,
+    -30px -30px 60px 0px rgba(255, 255, 255, 0.9) inset,
+    30px -30px 60px 0px rgba(194, 194, 194, 0.2) inset,
+    -30px 30px 60px 0px rgba(194, 194, 194, 0.2) inset,
+    -1px -1px 2px 0px rgba(194, 194, 194, 0.5),
+    1px 1px 2px 0px rgba(255, 255, 255, 0.3);
+}
+
 .alert {
   @apply flex flex-col items-center justify-center rounded-lg p-2 text-red-600 w-full font-semibold bg-red-200;
 }
@@ -43,9 +83,14 @@
   @apply w-40 rounded-lg shadow-xl;
 }
 
+.glass {
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 /* Buttons ______________________________________________ */
 .btn-primary {
-  @apply p-2 text-black  hover:text-white hover:bg-green-500 duration-300 transition bg-green-100 font-semibold px-4  shadow-lg shadow-black/20 border-t;
+  @apply p-2 text-black  hover:text-white hover:bg-green-500  transition bg-green-100 font-semibold px-4  shadow-lg shadow-black/20 border-t;
 }
 .btn-secondary {
   @apply p-2 hover:text-white shadow-lg shadow-black/20 border-t duration-300 transition rounded-lg   hover:bg-green-400  w-fit m-3;

@@ -5,7 +5,12 @@ const nextConfig = {
   },
   // next config for image
   images: {
-    domains: ['images.unsplash.com', 'course-api.com', 'www.course-api.com'],
+    domains: [
+      'images.unsplash.com',
+      'course-api.com',
+      'www.course-api.com',
+      'plus.unsplash.com',
+    ],
   },
 };
 

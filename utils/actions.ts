@@ -9,11 +9,11 @@ export const newPerson = async (formData) => {
   const name = formData.get('name');
   const age = Number(formData.get('age'));
 
-  const image = formData.get('image');
+  // const image = formData.get('image');
   // const imageUrl = await convert(image);
 
-  const imageBlob = URL.createObjectURL(image);
-  console.log(imageBlob);
+  // const imageBlob = URL.createObjectURL(image);
+  // console.log('this is image url', imageBlob);
 
   // const imageUrl = URL.createObjectURL(imageBlob);
 
@@ -50,14 +50,14 @@ export const clearList = async () => {
 // ──────────────────────────────────────────────────── 🟩 ─
 // ─── Reset List ──────────────────────────────────── 🟩 ─
 
-// export const resetList = async () => {
-//   console.log('reset list');
-//   try {
-//     await exec('npx prisma migrate reset --force ');
-//     // console.log('done');
-//   } catch (error) {
-//     console.error('Error:', error);
-//   } finally {
-//     revalidatePath('/birthday-buddy');
-//   }
-// };
+export const resetList = async () => {
+  console.log('reset list');
+  try {
+    await exec('npx prisma migrate reset --force ');
+    // console.log('done');
+  } catch (error) {
+    console.error('Error:', error);
+  } finally {
+    revalidatePath('/birthday-buddy');
+  }
+};

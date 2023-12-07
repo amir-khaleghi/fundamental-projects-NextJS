@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Sidebar = () => {
   return (
     <nav>
-      <ul className="absolute back-shadow flex flex-col justify-start top-14  p-2 text-xl gap-2 ">
+      <ul className="absolute back-shadow flex flex-col justify-start top-14 z-20 p-2 text-xl gap-2 ">
         {Links.map((link) => (
           <li
             className={`
