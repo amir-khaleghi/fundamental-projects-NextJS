@@ -7,7 +7,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Items from './Items';
-import Loading from '../loading';
 
 // ─── Local Storage ────────────────────────────────── 🟩 ─
 //set local
@@ -19,17 +18,21 @@ const getLocalStorage = () => {
   if (typeof window !== 'undefined') {
     let list = localStorage.getItem('list');
     if (list) {
-      list = JSON.parse(localStorage.getItem('list'));
+      list = JSON.parse(list);
     } else {
       list = [];
     }
     return list;
+  } else {
+    return [];
   }
 };
 
 //default list
-const defaultList = JSON.parse(localStorage.getItem('list')) || [];
-
+const defaultList =
+  typeof window !== 'undefined' && localStorage.getItem('list')
+    ? JSON.parse(localStorage.getItem('list'))
+    : [];
 /* ■■■■■■■■■■■■■■■■■■■■■■■■ Comp ■■■■■■■■■■■■■■■■■■■■■■■■ */
 const Page = () => {
   getLocalStorage();
@@ -68,6 +71,7 @@ const Page = () => {
     });
     setItems(newItems);
     setLocalStorage(newItems);
+    toast.success('Item edited');
   };
 
   /* ■■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■■ */
