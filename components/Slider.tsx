@@ -44,7 +44,7 @@ const Slider = ({ reviews }) => {
       const newIndex = (currentIndex + 1) % reviews.length;
       return newIndex;
     });
-    // indexes    0  1  2  3   0  1  2  3 
+    // indexes    0  1  2  3   0  1  2  3
     // newIndex   1  2  3  0   1  2  3  0
   };
   const prevPerson = () => {
@@ -53,7 +53,7 @@ const Slider = ({ reviews }) => {
       return newIndex;
     });
     // indexes    0  1  2  3   0  1  2  3
-    // newIndex   3  0  1  2   3  0  1  2 
+    // newIndex   3  0  1  2   3  0  1  2
   };
 
   //randomReview

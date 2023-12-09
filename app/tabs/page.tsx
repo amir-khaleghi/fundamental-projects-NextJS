@@ -18,7 +18,6 @@ const Page = () => {
         throw new Error('Failed to fetch data');
       }
       const data = await response.json();
-      console.log('this is data', data);
       setJobs(data);
     } catch (error) {
       console.log(`this is error : ${error}`);

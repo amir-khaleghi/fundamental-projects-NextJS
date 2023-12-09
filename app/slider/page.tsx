@@ -1,8 +1,11 @@
-const page = () => {
+import Carousel from '@/components/Carousel';
+import SimpleSlider from '@/components/SimpleSlider';
+
+const Page = () => {
   return (
-    <div className="glass w-full h-full flex items-center justify-center">
-      page
-    </div>
+    <main className="w-fit mx-20">
+      <SimpleSlider />
+    </main>
   );
 };
-export default page;
+export default Page;
