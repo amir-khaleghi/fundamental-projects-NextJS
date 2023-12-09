@@ -20,7 +20,7 @@ const Color = ({ index, color, toast }) => {
   return (
     <article
       onClick={saveClipboard}
-      className={`w-full h-20 cursor-pointer flex items-start justify-start p-2 border flex-col ${
+      className={`w-full h-20 cursor-pointer flex items-start justify-start p-2 border-l flex-col ${
         index > 10 ? 'text-white' : ''
       }`}
       style={{ background: `#${hex}` }}
