@@ -3,7 +3,7 @@
 import { text } from '@/context/data';
 import { useState } from 'react';
 
-const page = () => {
+const Page = () => {
   const [count, setCount] = useState(1);
   return (
     <section className="container">
@@ -32,4 +32,4 @@ const page = () => {
     </section>
   );
 };
-export default page;
+export default Page;
