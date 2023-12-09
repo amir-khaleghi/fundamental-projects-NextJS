@@ -8,7 +8,6 @@ export default function Home() {
         This website features a collection of fundamental React projects
         intended to provide helpful practice and learning opportunities for
         developing React skills.☘
-        <FaTwitterSquare />
       </p>
     </div>
   );
